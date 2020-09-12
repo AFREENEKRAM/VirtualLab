@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+  }
+
+  
+.date {
+  font-style: oblique;
+  font-weight: bolder;
+}
+
+.header{
+height: 100%;
+background-color: rgb(255,242,205);
+color: black;
+border-bottom: 5px solid;
+    border-image-source: linear-gradient(
+      to right,
+      #1f789e,
+      #3f93a8,
+      #67acb0,
+      #92c5bb,
+      #bdddcb
+    );
+    border-image-slice: 1;
+
+  font-size: xx-large;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px ;
+  
+ 
+  font-weight: bolder;
+
+  
+}
+
+.footer {
+  background-color: white;
+  color: black;
+  height: 100%;
+  border-top: 5px solid;
+    border-image-source: linear-gradient(
+      to right,
+      #1f789e,
+      #3f93a8,
+      #67acb0,
+      #92c5bb,
+      #bdddcb
+    );
+    border-image-slice: 1;
+
+}
+
+.firstScreen {
+  height: 100%;
+  background-color: rgb(206,255,240);
+}
