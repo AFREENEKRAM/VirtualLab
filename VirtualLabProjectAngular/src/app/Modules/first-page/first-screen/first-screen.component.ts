@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { DataServiceService } from 'src/app/AppStore/data-service.service';
 
 @Component({
   selector: 'app-first-screen',
@@ -11,11 +12,16 @@ export class FirstScreenComponent implements OnInit {
   loginForm;
   loginFormFields = new loginFormFields;
   highScoreList: highscore[];
+
+  HighScoreData: any;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dataservice: DataServiceService
   ) { }
 
   ngOnInit(): void {
+
+    this.getHighScore();
 
     this.initializeDataSet();
 
@@ -49,6 +55,15 @@ export class FirstScreenComponent implements OnInit {
 
   onSubmit(){
 
+  }
+
+  getHighScore(){
+    return this.dataservice.fetchHighScoreList().subscribe(
+      (data: any) => {
+
+        this.HighScoreData = data;
+      }
+    );
   }
 
 }

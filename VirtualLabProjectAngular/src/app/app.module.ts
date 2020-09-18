@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { OutletComponent } from './outlet/outlet.component';
 import { FirstPageModule } from './Modules/first-page/first-page.module'
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
 
     FirstPageModule
