@@ -19,7 +19,7 @@ const _headers = new HttpHeaders({
 
 export class DataServiceService {
 
-  baseUrl =" http://localhost:8080";
+  baseUrl =" http://localhost:8000";
 
   constructor(
     private httpclient: HttpClient
@@ -33,4 +33,9 @@ export class DataServiceService {
     });
   }
 
+  login(data: any): Observable<any> {
+    return this.httpclient.post(this.baseUrl + '/user/login', data, {
+      headers: _headers
+    });
+  }
 }

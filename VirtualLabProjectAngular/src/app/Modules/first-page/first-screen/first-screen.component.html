@@ -16,8 +16,8 @@
 
                     <dxo-search-panel [visible]="false"></dxo-search-panel>
 
-                    <dxi-column dataField="Name" sortOrder="asc" dataType="string"></dxi-column>
-                    <dxi-column dataField="Score" dataType="string"></dxi-column>
+                    <dxi-column dataField="user.name" sortOrder="asc" dataType="string"></dxi-column>
+                    <dxi-column dataField="score" dataType="string"></dxi-column>
 
 
 
@@ -32,10 +32,14 @@
         </div>
 
         <!-- Video Related Work -- just change URL and settings -->
-        <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-        </iframe> -->
+       
 
         <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+
+            <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe> -->
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
@@ -50,7 +54,7 @@
                             <label> WELCOME</label>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="ngForm" #detailForm="ngForm">
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" id="ngForm" #detailForm="ngForm">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 6px;">
                                     <div class="row">
@@ -78,7 +82,7 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left: 60px;">
-                            <input type="button" value="LOGIN" (click)="detailForm.ngSubmit.emit('save')">
+                            <input type="button" value="LOGIN" (click)="detailForm.ngSubmit.emit('login')">
                             <input type="button" value="REGISTER NOW"
                                 style="background-color: blue; margin-left: 20px;">
                         </div>

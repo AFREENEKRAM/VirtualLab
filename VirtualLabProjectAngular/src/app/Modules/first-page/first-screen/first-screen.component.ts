@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { DataServiceService } from 'src/app/AppStore/data-service.service';
+import { DataServiceService } from '../../../AppStore/data-service.service';
+
+import notify from 'devextreme/ui/notify';
+
 
 @Component({
   selector: 'app-first-screen',
@@ -8,10 +11,12 @@ import { DataServiceService } from 'src/app/AppStore/data-service.service';
   styleUrls: ['./first-screen.component.css']
 })
 export class FirstScreenComponent implements OnInit {
-
+  // @ViewChild('videoPlayer') videoplayer: ElementRef; 
   loginForm;
   loginFormFields = new loginFormFields;
-  highScoreList: highscore[];
+  loginResponse;
+ 
+  videoSource:any;
 
   HighScoreData: any;
   constructor(
@@ -25,25 +30,12 @@ export class FirstScreenComponent implements OnInit {
 
     this.initializeDataSet();
 
-    this.highScoreList = [
-      {
-       "Name": "JOHN",
-       "Score": 1200
-      },
-      {
-       "Name": "Mary",
-       "Score": 1100
-      },
-      {
-        "Name": "CIA",
-        "Score": 1000
-       },
-       {
-        "Name": "EZA",
-        "Score": 950
-       },]
+   
   }
 
+  toggleVideo(event: any) {
+    // this.videoplayer.nativeElement.play();
+} 
 
   initializeDataSet = () => {
     this.loginForm = this.formBuilder.group({
@@ -53,7 +45,25 @@ export class FirstScreenComponent implements OnInit {
   }
 
 
-  onSubmit(){
+  onSubmit(e){
+
+    if (e === 'login') {
+      return this.dataservice.login(this.loginForm.value).subscribe(
+        (data: any) => {
+  
+          this.loginResponse = data;
+
+          if (this.loginResponse === true) {
+          notify("User LoggedIn Successfully", 'success', 3000);
+          } else if (this.loginResponse === false) {
+            notify("Login Failed", 'error', 3000);
+          }
+        }
+       
+      );
+
+      
+    }
 
   }
 
@@ -66,11 +76,6 @@ export class FirstScreenComponent implements OnInit {
     );
   }
 
-}
-
-export class highscore {
-  Name: string;
-  Score: number;
 }
 
 export class loginFormFields {
