@@ -1,110 +1,98 @@
-<div class="col-xs-12 col-sm-12 col-md-12 firstScreen container"  >
-   <div class="row" style="height: 100%;">
-       <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;" >
+<div class="col-xs-12 col-sm-12 col-md-12 firstScreen container">
+    <div class="row" style="height: 100%;">
+        <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
 
-        <div style="background-color: white; padding: 30px; height: 100%;">
-        <dx-data-grid
-      
-        style="height:100%;"
-         #dxDataGrid
-        class="corrMainDataGrid"
-        [dataSource]="HighScoreData"    
-    
-        [twoWayBindingEnabled]="false"
-        [rowAlternationEnabled]="false"
-        [showColumnLines]="false"
-        [showRowLines]="false"
-        [showBorders]="false"
-        [columnHidingEnabled]="false"
-        [remoteOperations]="false"
-        [allowColumnReordering]="false"
-        [allowColumnResizing]="false"
-        
-        >
-
-      
-          <dxo-load-panel [enabled]="true"></dxo-load-panel>
-          
-          <dxo-filter-row 
-          [visible]="false" ></dxo-filter-row>
-          <dxo-header-filter [visible]="false"></dxo-header-filter>
-          
-          <dxo-search-panel
-              [visible]="false"
-          ></dxo-search-panel>
-          
-          <dxi-column dataField="Name" sortOrder="asc"  dataType="string"></dxi-column>
-          <dxi-column dataField="Score"  dataType="string"></dxi-column>
-         
-          
-          
-          
-          <dxo-scrolling
-              mode="standard"> <!-- or "virtual" | "infinite" -->
-          </dxo-scrolling>
-
-          
-      </dx-data-grid>
-    </div>
-       </div>
+            <div style="background-color: white; padding: 30px; height: 100%;">
+                <dx-data-grid style="height:100%;" #dxDataGrid class="corrMainDataGrid" [dataSource]="HighScoreData"
+                    [twoWayBindingEnabled]="false" [rowAlternationEnabled]="false" [showColumnLines]="false"
+                    [showRowLines]="false" [showBorders]="false" [columnHidingEnabled]="false"
+                    [remoteOperations]="false" [allowColumnReordering]="false" [allowColumnResizing]="false">
 
 
-       <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
-       </div>
+                    <dxo-load-panel [enabled]="true"></dxo-load-panel>
 
-       <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
+                    <dxo-filter-row [visible]="false"></dxo-filter-row>
+                    <dxo-header-filter [visible]="false"></dxo-header-filter>
 
-        <div class="row" style="height: 100%;">
-            
-           <div class="col-xs-12 col-sm-12 col-md-12 d-flex justify-content-center" style="background-color: white; padding: 30px; height: 60%;">
+                    <dxo-search-panel [visible]="false"></dxo-search-panel>
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left: 75px; font-weight: bold;">
-            <label > WELCOME</label>
-                </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="ngForm" #detailForm="ngForm">
+                    <dxi-column dataField="Name" sortOrder="asc" dataType="string"></dxi-column>
+                    <dxi-column dataField="Score" dataType="string"></dxi-column>
 
-            <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 6px;">
-                <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2 lookup-button">
-                <i class="dx-icon-user" style="font-size: 40px;"></i>
+
+
+
+                    <dxo-scrolling mode="standard">
+                        <!-- or "virtual" | "infinite" -->
+                    </dxo-scrolling>
+
+
+                </dx-data-grid>
             </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 lookup-control">
-                <input formControlName="email" type="email" placeholder="Email"/>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 6px;">
-                <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2 lookup-button">
-                <i class="dx-icon-key" style="font-size: 40px;"></i>
-            </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 lookup-control">
-                <input formControlName="password" type="password" placeholder="password"/>
-                </div>
-            </div>
-            </div>
-
-        </form>
-    </div>
-
-     <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left: 60px;">
-            <input type="button" value="LOGIN" (click)="detailForm.ngSubmit.emit('save')">
-            <input type="button" value="REGISTER NOW" style="background-color: blue; margin-left: 20px;" >
-                </div>
-
-
-    </div>
-         </div>
-
-         <div class="col-xs-12 col-sm-12 col-md-12">
-             Virtual lab setup for the safety of students
-         </div>
         </div>
- 
-       </div>
 
-   </div>
+        <!-- Video Related Work -- just change URL and settings -->
+        <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe> -->
+
+        <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4" style="height: 100%; padding: 65px;">
+
+            <div class="row" style="height: 100%;">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 d-flex justify-content-center"
+                    style="background-color: white; padding: 30px; height: 60%;">
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left: 75px; font-weight: bold;">
+                            <label> WELCOME</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="ngForm" #detailForm="ngForm">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 6px;">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 lookup-button">
+                                            <i class="dx-icon-user" style="font-size: 40px;"></i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 lookup-control">
+                                            <input formControlName="email" type="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12" style="padding: 6px;">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 lookup-button">
+                                            <i class="dx-icon-key" style="font-size: 40px;"></i>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 lookup-control">
+                                            <input formControlName="password" type="password" placeholder="password" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left: 60px;">
+                            <input type="button" value="LOGIN" (click)="detailForm.ngSubmit.emit('save')">
+                            <input type="button" value="REGISTER NOW"
+                                style="background-color: blue; margin-left: 20px;">
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    Virtual lab setup for the safety of students
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </div>
